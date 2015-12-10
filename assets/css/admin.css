@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+a{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul{padding: 0;list-style: none;}
+label{margin-top: 5px;font-size: 14px;}
+
+/* CSS Document */
+html { height: 100%; }
+body { font-family: 'Open Sans',serif;font-size:14px; font-weight:400; height:100%; margin:0px; }
+h1,h2,h3,h4{font-weight: 700;letter-spacing: 1px;}
+.pocetna { background-color:#000; }
+.btn{}
+/*leva strana*/
+.leva-strana { background-color:#181818; color:#999; text-align:center; height: 100%; }
+.datum { font-size:40px; margin:25px 0px; font-weight:100; color:#999; }
+.datum1 { font-size:40px; margin:25px 0px; font-weight:100; color:#999; text-align:center; }
+.kontrol-panel { margin:0px 10px; padding:10px; background-color:#d9534f; color:#FFF; }
+.meni ul { list-style:none; margin:20px 0px; padding:0px; border-bottom:solid 1px #666; }
+.meni ul li { padding:10px 0px 10px 10px; text-align:left; }
+.meni ul a{color:#fff;}
+.meni ul a:hover{text-decoration: none;}
+.meni ul li:hover { cursor:pointer; background-color:#222222; color:#ffffff; }
+.meni-aktiv { cursor:pointer; background-color:#222222; color:#ffffff; }
+.meni-podmeni { cursor:pointer; background-color:#222222;}
+.podrska {  margin:50px 10px 0px 10px; padding:10px; background-color:#337ab7; color:#FFF; }
+.podrska-podaci ul { list-style:none; margin:20px 0px; padding:0px; border-bottom:solid 1px #666; }
+.podrska-podaci ul li { padding:10px 0px 10px 10px; text-align:left; }
+/*leva strana*/
+/*heder*/
+.heder { background-color:#181818; }
+.logovani-korisnik { text-align:right; color:#999; }
+.logovani-korisnik ul { list-style:none; margin:25px 0px; }
+.logovani-korisnik ul li { padding:5px 0px; }
+.logovani-korisnik a:hover { text-decoration:none; color:#ffffff; }
+.odloguj-se { cursor:pointer; padding:5px 10px; background-color:#d9534f; color:#FFF; }
+/*heder*/
+.uspeh { margin-top:10px; padding:6px 20px; }
+.red { margin-top:15px; }
+.pod-red { padding:10px 30px; }
+.snimi { margin-top:15px; }
+.glyphicon { cursor:pointer; }
+.ikonica { margin-right:10px; }
+.logo2 { text-align:center; }
+.logo2 img { margin:0px auto 50px auto; }
+
+.logovanje { margin: 0 auto; width:400px; }
+.logovanje input[type=submit] { background-color:#00a2d5; color:#fff; width:100%; }
+.logo { text-align:center; }
+.logo img { margin:50px auto; }
+.prava { margin:30px 0px; font-size:11px; color:#999; }
+.novosti { margin:20px 0px; font-size:11px; color:#999; }
+.nema { padding:7px 10px; }
+.opis { width: 150px; }
+.poslednji { margin-bottom:30px; }
+.mojeobavestenje { padding:10px 0; text-align:center; font-weight:600; }
+.adm-title{padding: 10px 20px; border-bottom: 1px solid #eee;margin-bottom: 20px;}
+.spiner{text-align: center;}
+.spiner i{margin:20% 0;}
+
+/*----pocetna----*/
+
+/*----proizvodi----*/
+.pro-layout-in{border: 1px solid #999;background: #fff;color:#999; padding: 10px 15px;min-height: 300px;}
+.prod-tab{padding: 2px 10px 0px 10px;background: #fff;color:#999;font-style: italic; font-size: 12px;border: 1px solid #ccc;line-height: 22px;}
+.prod-tab button{float: right;line-height: 16px;margin: 0 5px;padding: 2px 6px; background: transparent; border: none;}
+.prod-tab button:hover{box-shadow: 1px 1px 2px #777;background: #ebebeb;}
+.show-prod:hover{box-shadow: 1px 1px 4px #999; cursor: pointer;}
+.remopt{color:#d9534f;font-weight: 700;cursor: pointer;}
+.remopt:hover{opacity:0.5;}
+.prod-slike{margin: 20px 0 10px 0;border: 1px solid #0066ff;}
+.prod-slike h4{padding: 6px 12px;background: #0066ff;color:#fff;margin: 0;}
+.prod-slike-in{padding: 10px 20px;}
+.prod-slike-list{padding:15px 10px; border: 1px solid #aaa;}
+.prod-slike-layer{display: inline-block;position: relative;padding: 4px;border:1px solid #ccc;border-radius: 4px;margin:10px;}
+.prod-slike-layer img{width: 120px;height: 90px;}
+.prod-slike-layer i{position: absolute;top:10px;right:10px;background: #fff;color:#d43f3a;padding: 4px;border-radius: 3px;}
+.prod-slike-layer i:hover{cursor: pointer;background: #d43f3a;color:#fff;}
+.addpics{margin-top: 30px;padding: 10px; background: #eee;border:1px solid #ccc;border-radius: 3px;}
+.fa-save{padding: 9px 12px;}
+.fa-edit{padding: 9px 12px;}
+.input-group-addon{padding: 0;}
+.fa-save:hover{background: #777;color:#fff;cursor: pointer;}
+.fa-edit:hover{background: #777;color:#fff;cursor: pointer;}
+.prod-filters-in{padding:20px 10px;border:2px solid #0066ff;}
+.prod-filters h4{background: #0066ff;color:#fff;padding: 10px 20px;margin: 0;}
+.prod-list-tab{padding: 10px;border: 1px solid #eee;box-shadow: 1px 1px 4px #aaa;margin-bottom: 10px;}
+.showproddet{padding: 6px;}
+.showproddet:hover{background: #777;color:#fff;cursor: pointer;box-shadow: 1px 1px 3px #000;border-radius: 4px;}
+
+/*----kategorije----*/
+.kat-layout{border: 2px solid #0066ff;}
+.kat-layout h4{padding: 10px 20px;background: #0066ff;color: #fff;margin: 0;}
+.kat-layout-in{padding: 10px 10px;min-height: 300px;}
+.kat-tab{padding: 5px 10px;border: 1px solid #eee;color:#777;font-size: 16px;font-style: italic;}
+.kat-tab:hover{border: 1px solid #aaa;box-shadow: 1px 1px 3px #666;font-weight: 700;cursor: default;}
+.kat-tab i{padding: 7px 6px 5px 9px;margin: -3px -7px -4px -9px;}
+.kat-tab i:hover{cursor: pointer;background: #777;color: #fff;border-radius: 4px;}
+.kat-group{}
+.fa-save{padding: 9px 8px;}
+.fa-save:hover{color:#eee;background: #555;border-radius: 0px 4px 4px 0px;cursor: pointer;}
+.fa-minus{padding: 6px 5px 4px 5px !important;margin:-3px 13px -4px 0px !important;border:1px solid #ff0000;background: #ff0000 !important;color: #fff !important;border-radius: 4px;}
+.fa-minus:hover{background: #fff !important;color:#ff0000 !important;}
+
+/*----modeli i marke----*/
+.bra-layout{padding: 10px 30px;}
+.bra-layout h4{padding: 10px 20px;margin: 0;background: #d43f3a;color: #fff;}
+.bra-layout-in{border: 2px solid #d43f3a;min-height: 300px;padding: 10px;}
+
+/*-----slajder----*/
+.asld-layer{
+    padding: 20px 30px;
+}
+.asld-new{padding: 0px 30px;}
+#addslide{
+    width: 50%;
+    padding: 20px;
+    border:1px solid #eee;
+    margin-top: 20px;
+}
+
+/*----medai queries-----*/
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px){
+}
+@media (max-width: 768px){
+	 .podrska { display:none; }
+	 .podrska-podaci { display:none; }
+	 .prava { display:none; }
+	 .novosti { display:none; }
+	 .logo2 { display:none; }
+	 .datum { font-size:20px; text-align:center; margin:5px 0; }
+	 .datum1 { font-size:20px; margin:5px 0; }
+}
