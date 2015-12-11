@@ -13,5 +13,9 @@ class Home extends Controller {
     public function korpa(){
         self::view('kupovina/korpa');
     }
+    public function potvrdakupovine($np){
+        $data = array($np);
+        self::view('kupovina/potvrda',$data);
+    }
 
 }

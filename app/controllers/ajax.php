@@ -469,4 +469,30 @@ class Ajax extends Controller{
         $data = $post['sc'];
         self::view('kupovina/drawcart',$data);
     }
+    public function insertOrder(){
+        $post = filter_input_array(INPUT_POST);
+        $lid = inserting('orders',array(
+            'ord_number'=>$post['number'],
+            'ord_name'=>$post['ime'],
+            'ord_address'=>$post['adresa'],
+            'ord_city'=>$post['grad'],
+            'ord_postcode'=>$post['posta'],
+            'ord_phone'=>$post['telefon'],
+            'ord_placanje'=>$post['nacinplacanja'],
+            'ord_vrednost'=>$post['vrednost']
+        ));
+        echo $lid;
+    }
+    public function insertOrderList(){
+        $post = filter_input_array(INPUT_POST);
+        $data = $post['lista'];
+        foreach($data as $d){
+            $a = inserting('orderlist',array(
+                'oli_order_id'=>$d['oid'],
+                'oli_proizvod_id'=>$d['pid'],
+                'oli_kolicina'=>$d['kolicina']
+            ));
+        }
+        
+    }
 }

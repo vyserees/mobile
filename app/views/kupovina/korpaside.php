@@ -1,8 +1,12 @@
 <?php
 
 ?>
+<form action="" id="confirm-order">
+    <input type="hidden" name="number" value="<?=rand(1111,9999).'-'.date('dmY')?>">
+    <input type="hidden" name="vrednost" value="">
 <h4 style="margin-top: 20px;">KORISNIK</h4>
-<article>
+<article class="korisnik">
+    <p id="cart-emptyform" style="color: red;" hidden=""><span><i class="fa fa-warning"></i></span> Niste uneli sve podatke u narudzbenicu!</p>
     <input type="text" required="" name="ime" class="cart-input form-control" placeholder="ime i prezime">
     <input type="text" required="" name="adresa" class="cart-input form-control" placeholder="adresa isporuke">
     <input type="text" required="" name="grad" class="cart-input form-control" placeholder="mesto">
@@ -30,4 +34,5 @@
         </label>
     </div>        
 </article>
+</form>
 
