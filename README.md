@@ -1,2 +1,2 @@
-# Auxilium
-Micro PHP MVC Framework
+# Mobile.dev
+Cell phones equipment web shop
