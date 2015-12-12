@@ -2,10 +2,12 @@
 mvc_header();
 ?>
 <div class="row">
-    <div class="col-lg-9" style="margin-bottom: 50px;">
+    <div class="col-lg-12">
+        <h1 class="page-title">Proizvod</h1>
+    </div>
+    <div class="col-lg-12" style="margin-bottom: 50px;">
         <div class="single">
-            <h1>Proizvod</h1>
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 <div class="single-img-layer">
                     <div class="single-img-in">
                         <img src="" alt="Slika proizvoda" class="img-responsive"/>
@@ -15,11 +17,12 @@ mvc_header();
                     
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <div class="single-details">
                     <h2 class="single-title"></h2>
                     <p><span class="single-zalihe"></span></p>
-                    <p><strong>Cena : </strong><span class="single-cena"></span></p>
+                    <p class="single-cena-layer"><strong>Cena : </strong><span class="single-cena"></span></p>
+                    <p><strong>Sifra : </strong><span class="single-sifra"></span></p>
                     <p><strong>Marka : </strong><span class="single-marka"></span></p>
                     <p><strong>Model : </strong><span class="single-model"></span></p>
                     <article>
@@ -30,6 +33,11 @@ mvc_header();
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="left-sidebar list-sidebar">
+            <h4>SLICNI PROIZVODI</h4>
         </div>
     </div>
 </div>
@@ -80,6 +88,9 @@ $(document).ready(function(){
             var pr = data.proizvod;
             $('.single-title').html(pr[0].pro_naziv);
             $('.single-cena').html(parseInt(pr[0].pro_cena).toLocaleString()+' RSD');
+            $('.single-sifra').html(pr[0].pro_sifra);
+            $('.single-marka').html(pr[0].mar_naziv);
+            $('.single-model').html(pr[0].mod_naziv);
             $('.single-opis').html(pr[0].pro_opis);
         }    
     });

@@ -53,7 +53,7 @@ class Ajax extends Controller{
         $vred = $post['value'];
         $key = substr($post['key'],1);              
         
-        if($key==='enaziv'){
+        if($key==='naziv'){
             updating('proizvodi', array('pro_id'=>$prid), array('pro_id'=>$prid,'pro_naziv'=>$vred, 'pro_slug'=>slugging($vred)));
         }else{        
             updating('proizvodi', array('pro_id'=>$prid), array('pro_id'=>$prid,'pro_'.$key=>$vred));          
@@ -498,7 +498,10 @@ class Ajax extends Controller{
     public function drawSingle(){
         $res = array('proizvod'=>array(),'slike'=>array());
         $id = filter_input(INPUT_POST, 'prid');
-        $res['proizvod'] = selection('proizvodi',array('pro_id'=>$id));
+        $res['proizvod'] = q_custom("SELECT * FROM proizvodi "
+                . "INNER JOIN marke ON pro_marka_id=mar_id "
+                . "JOIN modeli ON pro_model_id=mod_id "
+                . "AND pro_id=".$id);
         $res['slike'] = selection('slike',array('sli_proizvod_id'=>$id));
         
         echo json_encode($res);
