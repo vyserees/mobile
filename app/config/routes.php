@@ -19,6 +19,7 @@ $routes = array(
     'proizvodi'=>array('controller'=>'home','method'=>'proizvodi'),
     'korpa'=>array('controller'=>'home','method'=>'korpa'),
     'potvrdakupovine'=>array('controller'=>'home','method'=>'potvrdakupovine'),
+    'proizvod'=>array('controller'=>'home','method'=>'proizvod'),
     
     
     /*---ajax routes---*/
@@ -47,6 +48,7 @@ $routes = array(
     'ajax-drawshoppingcart'=>array('controller'=>'ajax','method'=>'drawShoppingCart'),
     'ajax-insertorder'=>array('controller'=>'ajax','method'=>'insertOrder'),
     'ajax-insertorderlist'=>array('controller'=>'ajax','method'=>'insertOrderList'),
+    'ajax-drawsingle'=>array('controller'=>'ajax','method'=>'drawSingle'),
     
     'ajax-drawproduct'=>array('controller'=>'ajax','method'=>'drawProd'),
     'ajax-filteri'=>array('controller'=>'ajax','method'=>'setFilters'),

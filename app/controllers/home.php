@@ -17,5 +17,9 @@ class Home extends Controller {
         $data = array($np);
         self::view('kupovina/potvrda',$data);
     }
+    public function proizvod($pid){
+        
+        self::view('kupovina/proizvod/index');
+    }
 
 }

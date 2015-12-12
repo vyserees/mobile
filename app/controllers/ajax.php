@@ -495,4 +495,12 @@ class Ajax extends Controller{
         }
         
     }
+    public function drawSingle(){
+        $res = array('proizvod'=>array(),'slike'=>array());
+        $id = filter_input(INPUT_POST, 'prid');
+        $res['proizvod'] = selection('proizvodi',array('pro_id'=>$id));
+        $res['slike'] = selection('slike',array('sli_proizvod_id'=>$id));
+        
+        echo json_encode($res);
+    }
 }
