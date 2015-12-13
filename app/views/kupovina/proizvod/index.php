@@ -92,9 +92,9 @@ $(document).ready(function(){
                 items:5,
                 itemsDesktop : [1199,4],
                 itemsDesktopSmall : [980,3],
-                itemsTablet: [768,2],
+                itemsTablet: [768,3],
                 itemsTabletSmall: false,
-                itemsMobile : [479,1]
+                itemsMobile : [479,3]
             });
             var pr = data.proizvod;
             $('.single-title').html(pr[0].pro_naziv);
