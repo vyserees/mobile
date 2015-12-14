@@ -3,25 +3,64 @@ mvc_header();
 ?>
 
 <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div class="user-forms">
         <form action="/processreg" method="post">
             <h2>REGISTRUJTE SE</h2>
             <?php if($data!==''){ echo '<p class="msg-error">Korisnik vec postoji!<br>Pokusajte sa drugom e-mail adresom ili iskoristite mogucnost reseta lozinke ako ste je zaboravili.</p>';}?>
             <label>E-mail</label>
-            <input type="email" name="email" class="form-control" required="">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-envelope-o fa-lg"></i>
+                </span>
+                <input type="email" name="email" class="form-control" required="">
+            </div>
             <label>Lozinka</label>
-            <input type="password" name="password" class="form-control" required="">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-lock fa-lg"></i>
+                </span>
+                <input type="password" name="password" class="form-control" required="">
+            </div>
             <label>Ime i prezime</label>
-            <input type="text" name="ime" class="form-control" required="">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-user fa-lg"></i>
+                </span>
+                <input type="text" name="ime" class="form-control" required="">
+            </div>
             <label>Adresa</label>
-            <input type="text" name="adresa" class="form-control" required="">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-home fa-lg"></i>
+                </span> 
+                <input type="text" name="adresa" class="form-control" required="">
+            </div>
+            <label>Grad</label>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-university fa-lg"></i>
+                </span> 
+                <input type="text" name="grad" class="form-control" required="">
+            </div>
             <label>Postanski broj</label>
-            <input type="text" name="posta" class="form-control" required="">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-envelope fa-lg"></i>
+                </span>
+                <input type="text" name="posta" class="form-control" required="">
+            </div>
             <label>Telefon</label>
-            <input type="text" name="telefon" class="form-control" required="">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-phone fa-lg"></i>
+                </span>
+                <input type="text" name="telefon" class="form-control" required="">
+            </div>
             <hr>
             <input type="submit" value="POTVRDITE" class="btn btn-primary">
         </form>
+        </div>
     </div>
 </div>
 

@@ -11,7 +11,16 @@ ul{padding: 0;margin: 0;list-style: none;}
 .spiner i{margin:5% 0;font-size: 150px;}
 .main-layer{margin-bottom: 50px;}
 .page-title{padding:0 0 10px 10px;border-bottom: 2px solid #eee;}
-
+.input-group{width: 100%;}
+.input-group-addon{width:45px;}
+.user-forms{
+    margin: 50px 0;
+    padding: 40px 100px;
+    border: 1px solid #eee;
+    background: #e5e5e5;
+    border-radius: 30% 0%;
+    box-shadow: 2px 2px 6px #777;
+}
 
 /*-----head section-----*/
 .header{background: #f5f5f5;padding-top: 10px;color: #7bae23;}
@@ -55,7 +64,7 @@ header{box-shadow: 2px 2px 6px #000;}
     color: #000;
     font-weight: 700;
     border: 2px solid #ff0000;
-    border-radius: 50%;padding: 4px 9px 2px 10px;
+    border-radius: 0 0 50% 50%;padding: 4px 9px 2px 10px;
     font-size: 16px;
 }
 
