@@ -24,4 +24,22 @@ class Data extends Model{
             header('Location: /login/e');
         }
     }
+    public function processReg($post){
+        $res = selection('users',array('use_email'=>$post['email']));
+        if(count($res)>0){
+            header('Location: /registracija/e');
+        }else{
+            $a = inserting('users',array(
+                'use_email'=>$post['email'],
+                'use_password'=>md5($post['password']),
+                'use_role'=>'U',
+                'use_ime'=>$post['ime'],
+                'use_adresa'=>$post['adresa'],
+                'use_grad'=>$post['grad'],
+                'use_posta'=>$post['posta'],
+                'use_telefon'=>$post['telefon']
+            ));
+            header('Location: /potvrda-registracije');
+        }
+    }
 }

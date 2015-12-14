@@ -24,7 +24,7 @@ $routes = array(
     'registracija'=>array('controller'=>'home','method'=>'registracija'),
     'logout'=>array('controller'=>'home','method'=>'logout'),
     'loginauth'=>array('controller'=>'home','method'=>'loginAuth'),
-    'processreg'=>array('controller'=>'home','method'=>'proccessReg'),
+    'processreg'=>array('controller'=>'home','method'=>'processReg'),
     'potvrda-registracije'=>array('controller'=>'home','method'=>'confirmReg'),
     
     

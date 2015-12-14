@@ -38,5 +38,20 @@ class Home extends Controller {
         session_destroy();
         header('Location: /');
     }
+    public function registracija($s=null){
+        if(null!==$s){
+            $data = $s;
+        }else{
+            $data = '';
+        }
+        self::view('korisnici/reg',$data);
+    }
+    public function processReg(){
+        $post = filter_input_array(INPUT_POST);
+        self::model('data')->processReg($post);
+    }
+    public function confirmReg(){
+        self::view('korisnici/confirmreg');
+    }
 
 }
