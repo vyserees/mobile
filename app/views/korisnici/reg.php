@@ -20,6 +20,13 @@ mvc_header();
                 <span class="input-group-addon">
                     <i class="fa fa-lock fa-lg"></i>
                 </span>
+                <input type="password" id="password" class="form-control" required="">
+            </div>
+            <label>Ponovite lozinku</label>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-lock fa-lg"></i>
+                </span>
                 <input type="password" name="password" class="form-control" required="">
             </div>
             <label>Ime i prezime</label>
@@ -63,6 +70,29 @@ mvc_header();
         </div>
     </div>
 </div>
-
+<script>
+$(document).ready(function(){
+    $('[name="password"]').focusout(function(){
+        var p1 = $(this);
+        var p2 = $('#password');
+        if(p2.val()!==p1.val()){
+            p1.val('');
+            p2.val('');
+            alert('Lozinke se ne poklapaju! Pokusajte ponovo.');
+            p2.focus();
+        }
+    });
+    $('#password').focusout(function(){
+        var p1 = $(this);
+        var p2 = $('[name="password"]');
+        if(p2.val()!==p1.val()&&p2.val()!==''){
+            p1.val('');
+            p2.val('');
+            alert('Lozinke se ne poklapaju! Pokusajte ponovo.');
+            p1.focus();
+        }
+    });
+});
+</script>
 <?php 
 mvc_footer();
