@@ -40,6 +40,13 @@ mvc_header();
     <div class="col-lg-12">
         <div class="left-sidebar list-sidebar">
             <h4>SLICNI PROIZVODI</h4>
+            <div class="col-lg-12">
+                    <div class="featured list-list fet-home singl-similar">
+                        <div class="row">
+                            
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </div>
@@ -52,7 +59,28 @@ $(document).ready(function(){
         $('.large').css('background','url("'+url+'") no-repeat');
     });
     /*----events----*/
-    
+    $.ajax({
+        url:'/ajax-getsimilar',
+        type:'post',
+        data:{mid:localStorage.proizvodMarka,pid:localStorage.proizvod},
+        success:function(data){
+            $('.fet-home .row').html(data);
+            $('#featured-owl').owlCarousel({
+                items:5,
+                itemsDesktop : [1199,4],
+                itemsDesktopSmall : [980,3],
+                itemsTablet: [768,2],
+                itemsTabletSmall: false,
+                itemsMobile : [479,1],
+                pagination:false,
+                navigation: true,
+                navigationText: [
+                    "<i class='fa fa-chevron-left fa-2x'></i>",
+                    "<i class='fa fa-chevron-right fa-2x'></i>"
+                ]
+            });
+        }
+    });
     $('.add-to-cart').attr('data-itm',localStorage.proizvod);
     $('.addtocart').attr('data-prid',localStorage.proizvod);
     $('.add-to-cart').each(function(){
@@ -105,6 +133,7 @@ $(document).ready(function(){
             $('.single-opis').html(pr[0].pro_opis);
         }    
     });
+    
     
     /*------magnifier------*/
     

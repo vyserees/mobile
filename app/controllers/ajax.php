@@ -506,4 +506,10 @@ class Ajax extends Controller{
         
         echo json_encode($res);
     }
+    public function getSimilar(){
+        $post = filter_input_array(INPUT_POST);
+        $data = q_custom("SELECT * FROM proizvodi WHERE pro_marka_id=".$post['mid']." AND NOT pro_id=".$post['pid']);
+ 
+        echo self::view('home/featured',$data); 
+    }
 }

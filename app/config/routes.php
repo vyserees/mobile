@@ -49,6 +49,7 @@ $routes = array(
     'ajax-insertorder'=>array('controller'=>'ajax','method'=>'insertOrder'),
     'ajax-insertorderlist'=>array('controller'=>'ajax','method'=>'insertOrderList'),
     'ajax-drawsingle'=>array('controller'=>'ajax','method'=>'drawSingle'),
+    'ajax-getsimilar'=>array('controller'=>'ajax','method'=>'getSimilar'),
     
     'ajax-drawproduct'=>array('controller'=>'ajax','method'=>'drawProd'),
     'ajax-filteri'=>array('controller'=>'ajax','method'=>'setFilters'),

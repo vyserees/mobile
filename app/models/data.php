@@ -8,7 +8,7 @@ class Data extends Model{
         return selection('potkategorije', array('pot_kat_id'=>$k));
     }
     public function getExtra(){
-        $res = q_custom("SELECT * FROM proizvodi ORDER BY RAND() LIMIT 4");
+        $res = q_custom("SELECT * FROM proizvodi ORDER BY RAND() LIMIT 6");
         return $res;
     }
 }

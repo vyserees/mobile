@@ -3,9 +3,9 @@
 foreach($data as $p){
     $sl = selection('slike', array('sli_proizvod_id'=>$p['pro_id']));
 ?>
-<div class="col-lg-3">   
+<div class="col-lg-3 with-owl">   
         <div class="featured-layer">
-            <a href="/proizvod/<?=$p['pro_slug']?>" class="single" data-pid="<?=$p['pro_id']?>">
+            <a href="/proizvod/<?=$p['pro_slug']?>" class="single" data-pid="<?=$p['pro_id']?>" data-mid="<?=$p['pro_marka_id']?>">
             <div class="featured-image">
                 <div class="featured-price">
                     <strong><?=$p['pro_cena']?> RSD</strong>
@@ -28,7 +28,9 @@ foreach($data as $p){
             e.preventDefault();
             var pid = $(this).attr('data-pid');
             var url = $(this).attr('href');
+            var mid = $(this).attr('data-mid');
             localStorage.setItem('proizvod',pid);
+            localStorage.setItem('proizvodMarka',mid);
             location.assign(url);
         });
         var sorted = localStorage.sort;

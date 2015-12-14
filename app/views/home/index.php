@@ -20,7 +20,7 @@ mvc_header();
                 <div class="col-lg-12">
                     <div class="featured list-list fet-home">
                         <div class="row">
-                        <?php self::view('proizvodi/listsingl',$data); ?>
+                            <?php self::view('home/featured',$data); ?>
                         </div>
                     </div>
                 </div>
@@ -40,6 +40,17 @@ $(document).ready(function(){
     localStorage.setItem('page','1');
     
     $('.fet-home .featured-image').append('<div class="featured-add"><strong>EXTRA</strong></div>');
+    $('.with-owl').removeClass('col-lg-3');
+    $('#featured-owl').owlCarousel({
+        items:4,
+        pagination:false,
+        navigation: true,
+        navigationText: [
+            "<i class='fa fa-chevron-left fa-2x'></i>",
+            "<i class='fa fa-chevron-right fa-2x'></i>"
+        ]
+    });
+    
 });
 </script>
 <?php 

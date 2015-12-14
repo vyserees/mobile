@@ -12,6 +12,7 @@ ul{padding: 0;margin: 0;list-style: none;}
 .main-layer{margin-bottom: 50px;}
 .page-title{padding:0 0 10px 10px;border-bottom: 2px solid #eee;}
 
+
 /*-----head section-----*/
 .header{background: #f5f5f5;padding-top: 10px;color: #7bae23;}
 .hed-logo{padding: 30px 0px;background: #eee;}
@@ -138,6 +139,8 @@ header{box-shadow: 2px 2px 6px #000;}
     height: auto;
 }
 .hsld-layer{padding: 20px 0px 20px 40px;}
+.fsld-layer{padding: 20px 30px 20px 70px;}
+.singl-similar .fsld-layer{padding:20px 30px !important;}
 .hsld-image{
   
 }
@@ -174,6 +177,28 @@ header{box-shadow: 2px 2px 6px #000;}
     color: #fff;
     margin: 0 auto;
     font-size: 18px;
+}
+.owl-theme .owl-controls .owl-buttons div {
+  padding: 5px 9px;
+}
+ 
+.owl-theme .owl-buttons i{
+  margin-top: 2px;
+}
+ 
+ 
+.owl-theme .owl-controls .owl-buttons div {
+  position: absolute;
+}
+ 
+.owl-theme .owl-controls .owl-buttons .owl-prev{
+  left: 10px;
+  top: 140px; 
+}
+ 
+.owl-theme .owl-controls .owl-buttons .owl-next{
+  right: -25px;
+  top: 140px;
 }
 
 /*-----more homepage-----*/
