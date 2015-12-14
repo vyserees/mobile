@@ -58,5 +58,13 @@ class Admin extends Controller{
     public function slider(){
         self::view('admin/slider');
     }
+    public function porudzbine($s=null){
+        if(null!==$s){
+            $data = self::model('dashboard')->getFilteredOrders($s);
+        }else{
+            $data = self::model('dashboard')->getAllOrders();
+        }
+        self::view('admin/orders/index',$data);
+    }
 }
 

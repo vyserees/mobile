@@ -1,7 +1,8 @@
 <?php
 mvc_header();
-
-if($data[0]==='U'){?>
+?>
+<script>$(document).ready(function(){$('.head-cart').hide();});</script>
+<?php if($data[0]==='U'){?>
 <h1>USPESNA POTVRDA NARUDZBINE</h1>
 <h3>PLACANJE PUTEM UPLATNICE</h3>
     

@@ -79,9 +79,11 @@ h1,h2,h3,h4{font-weight: 700;letter-spacing: 1px;}
 .addpics{margin-top: 30px;padding: 10px; background: #eee;border:1px solid #ccc;border-radius: 3px;}
 .fa-save{padding: 9px 12px;}
 .fa-edit{padding: 9px 12px;}
+.fa-search{padding: 9px 12px;}
 .input-group-addon{padding: 0;}
 .fa-save:hover{background: #777;color:#fff;cursor: pointer;}
 .fa-edit:hover{background: #777;color:#fff;cursor: pointer;}
+.fa-search:hover{background: #777;color:#fff;cursor: pointer;}
 .prod-filters-in{padding:20px 10px;border:2px solid #0066ff;}
 .prod-filters h4{background: #0066ff;color:#fff;padding: 10px 20px;margin: 0;}
 .prod-list-tab{padding: 10px;border: 1px solid #eee;box-shadow: 1px 1px 4px #aaa;margin-bottom: 10px;}
@@ -117,6 +119,23 @@ h1,h2,h3,h4{font-weight: 700;letter-spacing: 1px;}
     padding: 20px;
     border:1px solid #eee;
     margin-top: 20px;
+}
+/*-----porudzbine-----*/
+.ord-tables{
+    padding: 20px 50px;
+}
+.ord-tables table{width: 48%;margin-right: 10px;}
+.ord-number{
+    padding: 0px 30px;
+    border: 1px solid #777;
+    margin-bottom: 10px;
+}
+.ord-number strong{
+    padding: 10px 20px;
+}
+.ord-number:hover{
+    background: #eee;
+    cursor: pointer;
 }
 
 /*----medai queries-----*/

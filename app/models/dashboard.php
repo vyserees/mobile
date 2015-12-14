@@ -60,4 +60,29 @@ class Dashboard extends Model{
         }
         deleting('proizvodi', array('pro_id'=>$prid));
     }
+    public function getAllOrders(){
+        $res = array('orders'=>array(),'list'=>array());
+        $res['orders'] = selection('orders',null,array('ord_id'),'DESC');
+        foreach($res['orders'] as $o){
+            $resol = q_custom("SELECT * FROM orderlist "
+                    . "INNER JOIN proizvodi ON pro_id=oli_proizvod_id "
+                    . "AND oli_order_id=".$o['ord_id']);
+            array_push($res['list'], $resol);
+        }
+        return $res;
+    }
+    public function getFilteredOrders($s){
+        $search = explode('=', $s);
+        if($search[0]==='pobroju'){$where=" WHERE ord_number='".$search[1]."'";}
+        if($search[0]==='poimenu'){$where=" WHERE ord_name='".$search[1]."'";}
+        $res = array('orders'=>array(),'list'=>array());
+        $res['orders'] = q_custom("SELECT * FROM orders".$where." ORDER BY ord_id DESC");
+        foreach($res['orders'] as $o){
+            $resol = q_custom("SELECT * FROM orderlist "
+                    . "INNER JOIN proizvodi ON pro_id=oli_proizvod_id "
+                    . "AND oli_order_id=".$o['ord_id']);
+            array_push($res['list'], $resol);
+        }
+        return $res;
+    }
 }

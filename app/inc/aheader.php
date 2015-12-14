@@ -63,6 +63,7 @@
             <div class="meni">
                 <ul>
                     <a href="/admin-pocetna"><li>Početna</li></a>
+                    <a href="/admin-porudzbine"><li>Porudžbine</li></a>
                     <a href="/admin-proizvodi"><li>Proizvodi</li></a>
                     <a href="/admin-kategorije"><li>Kategorije</li></a>
                     <a href="/admin-modeli"><li>Modeli</li></a>

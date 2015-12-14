@@ -473,6 +473,7 @@ class Ajax extends Controller{
         $post = filter_input_array(INPUT_POST);
         $lid = inserting('orders',array(
             'ord_number'=>$post['number'],
+            'ord_date'=>date('Y-m-d'),
             'ord_name'=>$post['ime'],
             'ord_address'=>$post['adresa'],
             'ord_city'=>$post['grad'],

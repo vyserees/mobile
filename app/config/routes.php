@@ -16,6 +16,7 @@ $routes = array(
     'admin-modeli'=>array('controller'=>'admin','method'=>'brands'),
     'admin-delprod'=>array('controller'=>'admin','method'=>'delprod'),
     'admin-slider'=>array('controller'=>'admin','method'=>'slider'),
+    'admin-porudzbine'=>array('controller'=>'admin','method'=>'porudzbine'),
     'proizvodi'=>array('controller'=>'home','method'=>'proizvodi'),
     'korpa'=>array('controller'=>'home','method'=>'korpa'),
     'potvrdakupovine'=>array('controller'=>'home','method'=>'potvrdakupovine'),
