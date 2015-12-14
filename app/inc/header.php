@@ -43,8 +43,16 @@
           <div class="header">
               <div class="container page-layout">
                   <div class="row">
-                      <div class="col-lg-12">
+                      <div class="col-lg-9">
                           <p>Mobile.dev</p>
+                      </div>
+                      <div class="col-lg-3" style="text-align: right;">
+                          <?php if(isset($_SESSION['USER_ID'])&&$_SESSION['USER_ROLE']==='U'){?>
+                          <a href="/logout">Odlogujte se</a>
+                          <?php }else{?>
+                          <a href="/login">Ulogujte se</a>
+                          <a href="/registracija">Registrujte se</a>
+                          <?php }?>
                       </div>
                   </div>
               </div>

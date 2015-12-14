@@ -20,5 +20,23 @@ class Home extends Controller {
     public function proizvod($pid){
         self::view('kupovina/proizvod/index');
     }
+    public function login($s=null){
+        if(null!==$s){
+            $data = $s;
+        }else{
+            $data = '';
+        }
+        self::view('korisnici/index',$data);
+    }
+    public function loginAuth(){
+        $post = filter_input_array(INPUT_POST);
+        self::model('data')->loginAuth($post);
+    }
+    public function logout(){
+        session_start();
+        session_unset();
+        session_destroy();
+        header('Location: /');
+    }
 
 }

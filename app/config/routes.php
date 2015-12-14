@@ -20,6 +20,12 @@ $routes = array(
     'korpa'=>array('controller'=>'home','method'=>'korpa'),
     'potvrdakupovine'=>array('controller'=>'home','method'=>'potvrdakupovine'),
     'proizvod'=>array('controller'=>'home','method'=>'proizvod'),
+    'login'=>array('controller'=>'home','method'=>'login'),
+    'registracija'=>array('controller'=>'home','method'=>'registracija'),
+    'logout'=>array('controller'=>'home','method'=>'logout'),
+    'loginauth'=>array('controller'=>'home','method'=>'loginAuth'),
+    'processreg'=>array('controller'=>'home','method'=>'proccessReg'),
+    'potvrda-registracije'=>array('controller'=>'home','method'=>'confirmReg'),
     
     
     /*---ajax routes---*/
