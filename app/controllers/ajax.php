@@ -513,4 +513,17 @@ class Ajax extends Controller{
  
         echo self::view('home/featured',$data); 
     }
+    public function updateOrder(){
+        $post = filter_input_array(INPUT_POST);
+        if($post['key']==='paid'){
+            updating('orders',array('ord_id'=>$post['val']),array('ord_id'=>$post['val'],'ord_paid'=>'C'));
+            echo '<p style="padding:7px 12px;background:#5cb85c;color:#fff;margin:0;text-align:center;">UPLATA POTVRDJENA</p>';
+        }elseif($post['key']==='status'){
+            updating('orders',array('ord_id'=>$post['val']),array('ord_id'=>$post['val'],'ord_status'=>'C'));
+            echo '<p style="padding:7px 12px;background:#5cb85c;color:#fff;margin:0;text-align:center;">REALIZACIJA POTVRDJENA</p>';
+        }elseif($post['key']==='delete'){
+            deleting('orders',array('ord_id'=>$post['val']));
+            deleting('orderlist',array('oli_order_id'=>$post['val']));
+        }
+    }
 }

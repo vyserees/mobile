@@ -75,6 +75,10 @@ class Dashboard extends Model{
         $search = explode('=', $s);
         if($search[0]==='pobroju'){$where=" WHERE ord_number='".$search[1]."'";}
         if($search[0]==='poimenu'){$where=" WHERE ord_name='".$search[1]."'";}
+        if($search[0]==='postatusu'){
+            $s1 = explode('-', $search[1]);
+            $where = " WHERE ord_paid='".$s1[0]."' AND ord_status='".$s1[1]."'";
+        }
         $res = array('orders'=>array(),'list'=>array());
         $res['orders'] = q_custom("SELECT * FROM orders".$where." ORDER BY ord_id DESC");
         foreach($res['orders'] as $o){

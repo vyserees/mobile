@@ -123,8 +123,9 @@ h1,h2,h3,h4{font-weight: 700;letter-spacing: 1px;}
 /*-----porudzbine-----*/
 .ord-tables{
     padding: 20px 50px;
+    cursor: default;
 }
-.ord-tables table{width: 48%;margin-right: 10px;}
+.ord-tables table{width: 48%;margin-right: 10px;background:#777;color:#fff;}
 .ord-number{
     padding: 0px 30px;
     border: 1px solid #777;
@@ -136,6 +137,9 @@ h1,h2,h3,h4{font-weight: 700;letter-spacing: 1px;}
 .ord-number:hover{
     background: #eee;
     cursor: pointer;
+}
+.ord-tables button{
+    width:100%;
 }
 
 /*----medai queries-----*/

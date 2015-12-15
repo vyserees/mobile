@@ -6,7 +6,7 @@ mvc_header();
         <h1 class="page-title">Proizvod</h1>
     </div>
     <div class="col-lg-12" style="margin-bottom: 50px;">
-        <div class="single">
+        <div class="single-layer">
             <div class="col-lg-5">
                 <div class="single-img-layer">
                     <div class="single-img-in magnify">
@@ -99,7 +99,7 @@ $(document).ready(function(){
                 }
             }
         });
-    $.ajax({
+    $.ajax({ 
         url:'/ajax-drawsingle',
         type:'post',
         dataType:'json',
