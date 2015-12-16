@@ -81,3 +81,8 @@ function slugging($str){
     $wanted = array('-','-',' ','','','-','-','','i',' posto','s','s','d','d','z','z','c','c','c','c');
     return str_replace($unwanted, $wanted, $s);
 }
+/*--------statistics-------*/
+function get_prihod($date=null,$gru=null,$cat=null,$brand=null){
+    $s = new Statistics();
+    return $s->getPrihod($date,$gru,$cat,$brand);
+}

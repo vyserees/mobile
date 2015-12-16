@@ -60,6 +60,19 @@ adm_header();
                             <td><strong>Telefon</strong></td>
                             <td><?=$data['orders'][$i]['ord_phone']?></td>
                         </tr>
+                        <tr>
+                            <td><strong>Nacin placanja</strong></td>
+                            <td><?php switch($data['orders'][$i]['ord_placanje']){
+                                case 'U':
+                                    echo 'Uplatnicom';
+                                    break;
+                                case 'V':
+                                    echo 'Virmanom';
+                                    break;
+                                default:
+                                    echo 'Pouzecem';
+                            }?></td>
+                        </tr>
                     </table>
                     <table class="table table-bordered col-lg-6">
                         <tr><th colspan="3">PROIZVODI</th></tr>
