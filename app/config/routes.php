@@ -58,6 +58,7 @@ $routes = array(
     'ajax-drawsingle'=>array('controller'=>'ajax','method'=>'drawSingle'),
     'ajax-getsimilar'=>array('controller'=>'ajax','method'=>'getSimilar'),
     'ajax-updateorder'=>array('controller'=>'ajax','method'=>'updateOrder'),
+    'ajax-drawallcharts'=>array('controller'=>'ajax','method'=>'drawAllCharts'),
     
     'ajax-drawproduct'=>array('controller'=>'ajax','method'=>'drawProd'),
     'ajax-filteri'=>array('controller'=>'ajax','method'=>'setFilters'),

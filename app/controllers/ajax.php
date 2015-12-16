@@ -526,4 +526,23 @@ class Ajax extends Controller{
             deleting('orderlist',array('oli_order_id'=>$post['val']));
         }
     }
+    public function drawAllCharts(){
+        $ret = array();
+        $vals = array();
+        $res = prihod_by('grupa');
+        foreach($res as $key=>$value){
+            array_push($vals, array($key,$value));
+        }
+        array_push($ret,array('title'=>'Prihod po grupama','tip'=>'Grupe','mesto'=>'chart-grupe','podaci'=>$vals));
+        
+        $vals = array();
+        $res = prihod_by('marka');
+        foreach($res as $key=>$value){
+            array_push($vals, array($key,$value));
+        }
+        array_push($ret,array('title'=>'Prihod po markama','tip'=>'Marke','mesto'=>'chart-marke','podaci'=>$vals));
+        
+        echo json_encode($ret);
+        
+    }
 }

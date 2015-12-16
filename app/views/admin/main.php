@@ -5,15 +5,36 @@ adm_header();
     <div class="row">
         <div class="col-lg-12">
             <h3>PRODAJA</h3>
-            <p>UKUPNO - <?php $up=prihod_total();echo $up['ukupno']; ?></p>
-            <p>ZA DECEMBAR - <?php $upm = prihod_total('12-2015');echo $upm['ukupno'];?></p>
-            <p>MARKE : <?php var_dump(prihod_by('marka')); ?></p>
-            <p>MARKE ZA DEC : <?php var_dump(prihod_by('marka','12-2015')); ?></p>
-            <p>GRUPE : <?php var_dump(prihod_by('grupa')); ?></p>
-            <p>KATEGORIJE : <?php var_dump(prihod_by('kat')); ?></p>
+            <div class="col-lg-6">
+                <div class="charts">
+                    <div class="chart-header"></div>
+                    <div class="chart-area" id="chart-grupe"></div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="charts">
+                    <div class="chart-header"></div>
+                    <div class="chart-area" id="chart-marke"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url:'/ajax-drawallcharts',
+            dataType:'json',
+            success:function(data){
+                var l = data.length;
+                for(var i=0;i<l;i++){
+                    drawChart(data[i].title,data[i].tip,data[i].mesto,data[i].podaci);
+                }
+            }
+        });
+    });
+</script>
 <?php 
 adm_footer();
 

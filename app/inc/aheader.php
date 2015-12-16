@@ -22,8 +22,8 @@
     <link href="/assets/css/admin.css" rel="stylesheet">
     <!--Jquery library-->
     <script src="/assets/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     
-        
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
