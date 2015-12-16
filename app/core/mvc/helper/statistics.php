@@ -1,27 +1,11 @@
 <?php
 
 class Statistics{
-    public function getPrihod($date=null,$gru=null,$cat=null,$brand=null){
-        if(null!==$date){return $this->getPrihodByDate($date);}
-        if(null!==$gru){return $this->getPrihodByGroup($gru);}
-        if(null!==$cat){return $this->getPrihodByCat($cat);}
-        if(null!==$brand){return $this->getPrihodByBrand($brand);}
-        $res = selection('orders');
+    public function getTotalPrihod($date=null){        
+        $res = selection('orders',array('ord_paid'=>'C'));
         $c=0;$p=0;$sum = array();
         foreach($res as $o){
-            $c++;
-            $p+=$o['ord_vrednost'];
-        }
-        $sum['ukupno'] = $p;
-        $sum['neto'] = $p-($c*200);
-        $sum['put'] = $c*200;
-        return $sum;
-    }
-    private function getPrihodByDate($date){
-        $res = selection('orders');
-        $c=0;$p=0;$sum = array();
-        foreach($res as $o){
-            if(date('m-Y',strtotime($o['ord_date']))===$date){
+            if((null===$date)||(null!==$date&&date('m-Y',strtotime($o['ord_date']))===$date)){
                 $c++;
                 $p+=$o['ord_vrednost'];
             }
@@ -31,49 +15,55 @@ class Statistics{
         $sum['put'] = $c*200;
         return $sum;
     }
-    private function getPrihodByGroup($gru){
-        $ret = array();
-        $res1 = q_custom("SELECT * FROM proizvodi "
-                . "INNER JOIN grupe ON pro_grupa_id=gru_id "
-                . "AND pro_grupa_id=".$gru);
-        foreach($res1 as $p){
-            $res2 = q_custom("SELECT oli_proizvod_id,SUM(oli_kolicina) FROM orderlist WHERE oli_proizvod_id=".$p['pro_id']." GROUP BY oli_proizvod_id");
-            array_push($ret,array('ime'=>$p['gru_naziv'],'prihod'=>($p['pro_cena']*$res2[0][1])));
+    public function getKeyPrihod($key,$date=null){
+        if($key==='grupa'){
+            $keys = selection('grupe');
+            $ret = array();
+        
+            foreach($keys as $k){                
+                $res = selection('proizvodi',array('pro_grupa_id'=>$k['gru_id']));
+                $p = $this->calcVals($res,$date);
+                $ret[ucfirst($k['gru_naziv'])] = $p;
+            }
+         
+            return $ret;
         }
-        foreach($ret as $r){
-           $sum['ime'] = ucfirst($r['ime']);
-           $sum['ukupno'] += $r['prihod']; 
+        if($key==='marka'){
+            $keys = selection('marke');
+            $ret = array();
+        
+            foreach($keys as $k){                
+                $res = selection('proizvodi',array('pro_marka_id'=>$k['mar_id']));
+                $p = $this->calcVals($res,$date);
+                $ret[ucfirst($k['mar_naziv'])] = $p;
+            }
+         
+            return $ret;
         }
-        return $sum;
+        if($key==='kat'){
+            $keys = selection('kategorije');
+            $ret = array();
+        
+            foreach($keys as $k){                
+                $res = selection('proizvodi',array('pro_kat_id'=>$k['kat_id']));
+                $p = $this->calcVals($res,$date);
+                $ret[ucfirst($k['kat_naziv'])] = $p;
+            }
+         
+            return $ret;
+        }
     }
-    private function getPrihodByCat($cat){
-        $ret = array();
-        $res1 = q_custom("SELECT * FROM proizvodi "
-                . "INNER JOIN kategorije ON pro_kat_id=kat_id "
-                . "AND pro_kat_id=".$cat);
-        foreach($res1 as $p){
-            $res2 = q_custom("SELECT oli_proizvod_id,SUM(oli_kolicina) FROM orderlist WHERE oli_proizvod_id=".$p['pro_id']." GROUP BY oli_proizvod_id");
-            array_push($ret,array('ime'=>$p['kat_naziv'],'prihod'=>($p['pro_cena']*$res2[0][1])));
+    private function calcVals($vals,$date=null){
+        $p = 0;
+        foreach($vals as $v){
+            $res2 = q_custom("SELECT oli_proizvod_id,oli_order_id,SUM(oli_kolicina),ord_date FROM orderlist "
+                . "INNER JOIN orders ON oli_order_id=ord_id "
+                . "AND oli_proizvod_id=".$v['pro_id']);
+            if((null===$date)||(null!==$date&&date('m-Y',strtotime($res2[0]['ord_date']))===$date)){
+                $p += $v['pro_cena']*$res2[0][2];
+            }
         }
-        foreach($ret as $r){
-            $sum['ime'] = ucfirst($r['ime']);
-           $sum['ukupno'] += $r['prihod']; 
-        }
-        return $sum;
+        return $p;
     }
-    private function getPrihodByBrand($brand){
-        $ret = array();
-        $res1 = q_custom("SELECT * FROM proizvodi "
-                . "INNER JOIN marke ON pro_marka_id=mar_id "
-                . "AND pro_marka_id=".$brand);
-        foreach($res1 as $p){
-            $res2 = q_custom("SELECT oli_proizvod_id,SUM(oli_kolicina) FROM orderlist WHERE oli_proizvod_id=".$p['pro_id']." GROUP BY oli_proizvod_id");
-            array_push($ret,array('ime'=>$p['mar_naziv'],'prihod'=>($p['pro_cena']*$res2[0][1])));
-        }
-        foreach($ret as $r){
-            $sum['ime'] = ucfirst($r['ime']);
-           $sum['ukupno'] += $r['prihod']; 
-        }
-        return $sum;
-    }
+    
 }

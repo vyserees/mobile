@@ -82,7 +82,11 @@ function slugging($str){
     return str_replace($unwanted, $wanted, $s);
 }
 /*--------statistics-------*/
-function get_prihod($date=null,$gru=null,$cat=null,$brand=null){
+function prihod_total($date=null){
     $s = new Statistics();
-    return $s->getPrihod($date,$gru,$cat,$brand);
+    return $s->getTotalPrihod($date);
+}
+function prihod_by($key,$date=null){
+    $s = new Statistics();
+    return $s->getKeyPrihod($key,$date);
 }
