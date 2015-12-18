@@ -529,20 +529,39 @@ class Ajax extends Controller{
     public function drawAllCharts(){
         $ret = array();
         $vals = array();
-        $res = prihod_by('grupa');
+        $res = prihod_by('sum','grupa');
         foreach($res as $key=>$value){
             array_push($vals, array($key,$value));
         }
         array_push($ret,array('title'=>'Prihod po grupama','tip'=>'Grupe','mesto'=>'chart-grupe','podaci'=>$vals));
         
         $vals = array();
-        $res = prihod_by('marka');
+        $res = prihod_by('sum','marka');
         foreach($res as $key=>$value){
             array_push($vals, array($key,$value));
         }
         array_push($ret,array('title'=>'Prihod po markama','tip'=>'Marke','mesto'=>'chart-marke','podaci'=>$vals));
         
+        $vals = array();
+        $res = prihod_by('kom','grupa');
+        foreach($res as $key=>$value){
+            array_push($vals, array($key,$value));
+        }
+        array_push($ret,array('title'=>'Prodati proizvodi po grupama','tip'=>'Grupe','mesto'=>'chart-grupe-kom','podaci'=>$vals));
+        
+        $vals = array();
+        $res = prihod_by('kom','marka');
+        foreach($res as $key=>$value){
+            array_push($vals, array($key,$value));
+        }
+        array_push($ret,array('title'=>'Prodati proizvodi po markama','tip'=>'Marke','mesto'=>'chart-marke-kom','podaci'=>$vals));
+        
         echo json_encode($ret);
         
+    }
+    public function sumByDate(){
+        $date = filter_input(INPUT_POST, 'date');
+        $res = prihod_total($date);
+        echo json_encode($res);
     }
 }

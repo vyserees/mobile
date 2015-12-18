@@ -86,7 +86,7 @@ function prihod_total($date=null){
     $s = new Statistics();
     return $s->getTotalPrihod($date);
 }
-function prihod_by($key,$date=null){
+function prihod_by($type,$key,$date=null){
     $s = new Statistics();
-    return $s->getKeyPrihod($key,$date);
+    return $s->getKeyPrihod($type,$key,$date);
 }

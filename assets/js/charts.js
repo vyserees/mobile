@@ -3,7 +3,7 @@
     google.setOnLoadCallback(drawChart);
 
     function drawChart(title,tip,mesto,podaci){
-        var a = [[tip, "Prihod"]];
+        var a = [[tip, "Ukupno"]];
         for(var i=0;i<podaci.length;i++){
             a.push(podaci[i]);
         }
@@ -20,7 +20,8 @@
 
       var options = {
         title: title,
-        bar: {groupWidth: "75%"},
+        width: '500',
+        bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById(mesto));

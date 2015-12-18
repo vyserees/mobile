@@ -59,6 +59,7 @@ $routes = array(
     'ajax-getsimilar'=>array('controller'=>'ajax','method'=>'getSimilar'),
     'ajax-updateorder'=>array('controller'=>'ajax','method'=>'updateOrder'),
     'ajax-drawallcharts'=>array('controller'=>'ajax','method'=>'drawAllCharts'),
+    'ajax-sumbydate'=>array('controller'=>'ajax','method'=>'sumByDate'),
     
     'ajax-drawproduct'=>array('controller'=>'ajax','method'=>'drawProd'),
     'ajax-filteri'=>array('controller'=>'ajax','method'=>'setFilters'),
