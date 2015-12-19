@@ -41,17 +41,21 @@
   <body>
       <header>
           <div class="header">
-              <div class="container page-layout">
+              <div class="container page-layout hed-links">
                   <div class="row">
                       <div class="col-lg-9">
-                          <p>Mobile.dev</p>
+                          <a href="/info/kontakt">Kontakt</a>
+                          <a href="/korpa">Korpa</a>
+                          <?php if(isset($_SESSION['USER_ID'])&&$_SESSION['USER_ROLE']==='U'){?>
+                          <a href="/moj-nalog"> Moj nalog</a>
+                          <?php }?>
                       </div>
                       <div class="col-lg-3" style="text-align: right;">
                           <?php if(isset($_SESSION['USER_ID'])&&$_SESSION['USER_ROLE']==='U'){?>
-                          <a href="/logout">Odlogujte se</a>
+                          <a href="/logout" style="margin:0 0 0 20px;">Odlogujte se</a>
                           <?php }else{?>
                           <a href="/login">Ulogujte se</a>
-                          <a href="/registracija">Registrujte se</a>
+                          <a href="/registracija" style="margin:0 0 0 20px;">Registrujte se</a>
                           <?php }?>
                       </div>
                   </div>

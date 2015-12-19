@@ -2,7 +2,16 @@
 
     <footer class="footer">
       <div class="container">
-          <p class="text-muted">Mobilni <?php echo date("Y"); ?></p>
+          <div class="col-lg-4">
+              <div class="foot-social">
+                  <ul>
+                      <li><a href="" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+                      <li><a href="" target="_blank"><i class="fa fa-twitter-square fa-lg"></i></a></li>
+                      <li><a href="" target="_blank"><i class="fa fa-youtube-square fa-lg"></i></a></li>
+                      <li><a href="" target="_blank"><i class="fa fa-pinterest-square fa-lg"></i></a></li>
+                  </ul>
+              </div>
+          </div>
       </div>
     </footer>
 

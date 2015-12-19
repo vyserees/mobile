@@ -561,7 +561,22 @@ class Ajax extends Controller{
     }
     public function sumByDate(){
         $date = filter_input(INPUT_POST, 'date');
-        $res = prihod_total($date);
-        echo json_encode($res);
+        $resp = prihod_total($date);
+        $ret = array();
+        $vals = array();
+        $res = prihod_by('sum','grupa',$date);
+        foreach($res as $key=>$value){
+            array_push($vals, array($key,$value));
+        }
+        array_push($ret,array('title'=>'Prihod po grupama','tip'=>'Grupe','mesto'=>'chart-grupe','podaci'=>$vals));
+        
+        $vals = array();
+        $res = prihod_by('sum','marka',$date);
+        foreach($res as $key=>$value){
+            array_push($vals, array($key,$value));
+        }
+        array_push($ret,array('title'=>'Prihod po markama','tip'=>'Marke','mesto'=>'chart-marke','podaci'=>$vals));
+        
+        echo json_encode(array($resp,$ret[0],$ret[1]));
     }
 }

@@ -104,8 +104,12 @@ $up = prihod_total();
                     $('#sum-net').html('<i class="fa fa-spin fa-spinner"></i>'); 
                 },
                 success:function(data){
-                    $('#sum-tot').html(data.ukupno);
-                    $('#sum-net').html(data.neto);
+                    $('#sum-tot').html(data[0].ukupno);
+                    $('#sum-net').html(data[0].neto);
+                    var l = data.length;
+                    for(var i=1;i<l;i++){
+                        drawChart(data[i].title,data[i].tip,data[i].mesto,data[i].podaci);
+                    }
                 }
             });
         });
