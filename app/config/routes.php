@@ -27,6 +27,7 @@ $routes = array(
     'loginauth'=>array('controller'=>'home','method'=>'loginAuth'),
     'processreg'=>array('controller'=>'home','method'=>'processReg'),
     'potvrda-registracije'=>array('controller'=>'home','method'=>'confirmReg'),
+    'info'=>array('controller'=>'home','method'=>'info'),
     
     
     /*---ajax routes---*/

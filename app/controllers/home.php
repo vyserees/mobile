@@ -53,5 +53,8 @@ class Home extends Controller {
     public function confirmReg(){
         self::view('korisnici/confirmreg');
     }
+    public function info($page){
+        self::view('info/'.$page);
+    }
 
 }
