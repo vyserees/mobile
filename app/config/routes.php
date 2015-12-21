@@ -28,6 +28,7 @@ $routes = array(
     'processreg'=>array('controller'=>'home','method'=>'processReg'),
     'potvrda-registracije'=>array('controller'=>'home','method'=>'confirmReg'),
     'info'=>array('controller'=>'home','method'=>'info'),
+    'proceskontakt'=>array('controller'=>'home','method'=>'procesKontakt'),
     
     
     /*---ajax routes---*/

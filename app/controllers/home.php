@@ -63,5 +63,11 @@ class Home extends Controller {
             self::view('info/'.$page);
         }
     }
+    public function procesKontakt(){
+        $post = filter_input_array(INPUT_POST);
+        $msg = '<h3>Poruka od '.$post['ime'].' :</h3><p>'.$post['msg'].'</p>';
+        email('vyserees@gmail.com',$post['email'],$post['subject'],$msg);
+        header('Location: /info/kontakt/s');
+    }
 
 }
