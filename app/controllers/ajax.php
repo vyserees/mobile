@@ -494,7 +494,8 @@ class Ajax extends Controller{
                 'oli_kolicina'=>$d['kolicina']
             ));
         }
-        
+        $res = selection('orders',array('ord_id'=>$post['lista'][0]['oid']));
+        echo $res[0]['ord_placanje'].'-'.$post['lista'][0]['oid'];
     }
     public function drawSingle(){
         $res = array('proizvod'=>array(),'slike'=>array());

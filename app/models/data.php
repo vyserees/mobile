@@ -42,4 +42,8 @@ class Data extends Model{
             header('Location: /potvrda-registracije');
         }
     }
+    public function getConfOrder($oid){
+        $res = selection('orders',array('ord_id'=>$oid));
+        return $res[0];
+    }
 }

@@ -66,7 +66,7 @@ mvc_header();
                         type:'post',
                         data:{lista:lista},
                         success:function(data){
-                            location.assign('/potvrdakupovine/'+$('[name="nacinplacanja"]').val());
+                            location.assign('/potvrdakupovine/'+data);
                         }
                     });
                 }

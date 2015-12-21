@@ -74,6 +74,9 @@ header{box-shadow: 2px 2px 6px #000;}
     color:#173e43;
     margin-right: 20px;
 }
+.hed-links a:hover{
+    opacity: 0.6;
+}
 
 /*-----menu section-----*/
 .menu{
@@ -327,6 +330,23 @@ header{box-shadow: 2px 2px 6px #000;}
     background:#fff;
     cursor: pointer;
 }
+.cf-order{
+    margin-top: 50px;
+    padding: 20px;
+    background: #3fb0ac;
+}
+.cf-order article{
+    padding: 10px 20px;
+    background: #dddfd4;
+    margin: 0 auto;
+}
+.cf-order p{font-size: 16px;text-align: center;}
+.cf-order h2{
+    text-align: center;
+}
+.cf-order article p{
+    text-align: left !important;
+}
 
 /*single proizvod*/
 .single-img-in{
@@ -380,6 +400,25 @@ header{box-shadow: 2px 2px 6px #000;}
 	display: none;
 }
 .small{display: block;}
+
+/*------info pages section------*/
+.info-title{}
+.cont-form{margin: 40px 0;}
+.cont-form input{
+    font-size: 18px;
+    padding: 12px 24px;
+    border: 1px solid #dddfd4;
+    height: auto;
+}
+.cont-form textarea{
+    font-size: 18px;
+    border: 1px solid #dddfd4;
+}
+.cont-form label{
+    margin: 10px 0;
+    font-size: 18px;
+    color:#3fb0ac;
+}
 
 
 /*------footer section-----*/

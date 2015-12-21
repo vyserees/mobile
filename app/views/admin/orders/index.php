@@ -36,7 +36,17 @@ adm_header();
             <?php $l = count($data['orders']);
             for($i=0;$i<$l;$i++){?>
             <div class="ord-number">
-                <h4>BR. <?=$data['orders'][$i]['ord_number']?></h4>
+                <h4><span>
+                    <?php if($data['orders'][$i]['ord_status']==='P'&&$data['orders'][$i]['ord_paid']==='P'){?>
+                        <i class="fa fa-ban fa-lg" style="color:red;margin-right: 10px;" title="Neplacena i nerealizovana"></i>
+                    <?php }elseif($data['orders'][$i]['ord_status']==='P'&&$data['orders'][$i]['ord_paid']==='C'){?>
+                        <i class="fa fa-warning fa-lg" style="color:yellow;margin-right: 6px;" title="Placena a nerealizovana"></i>
+                    <?php }elseif($data['orders'][$i]['ord_status']==='C'&&$data['orders'][$i]['ord_paid']==='C'){?>
+                        <i class="fa fa-check fa-lg" style="color:green;margin-right: 6px;" title="Kompletirana"></i>
+                    <?php }?>
+                    </span>
+                    BR. <?=$data['orders'][$i]['ord_number']?>
+                </h4>
                 <div class="ord-tables row" hidden="">
                     <table class="table table-bordered col-lg-6">
                         <tr><th colspan="2">KUPAC</th></tr>

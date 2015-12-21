@@ -14,7 +14,9 @@ class Home extends Controller {
         self::view('kupovina/korpa');
     }
     public function potvrdakupovine($np){
-        $data = array($np);
+        $pl = explode('-', $np);
+        $res = self::model('data')->getConfOrder($pl[1]);
+        $data = array($pl[0],$res);
         self::view('kupovina/potvrda',$data);
     }
     public function proizvod($pid){
@@ -53,8 +55,13 @@ class Home extends Controller {
     public function confirmReg(){
         self::view('korisnici/confirmreg');
     }
-    public function info($page){
-        self::view('info/'.$page);
+    public function info($page,$msg=null){
+        if(null!==$msg){
+            $data = $msg;
+            self::view('info/'.$page,$data);
+        }else{
+            self::view('info/'.$page);
+        }
     }
 
 }
